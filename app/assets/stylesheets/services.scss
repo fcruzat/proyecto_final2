@@ -1,3 +1,24 @@
 // Place all the styles related to the services controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+    // background: linear-gradient(to right, #7b4397, #dc2430); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background-image: url("fondo1.jpg");
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.caja1{
+    background-color: beige;
+    
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    color: #fb8498;
+    font-family: 'Satisfy', cursive;
+}
+
+.jumbotron{
+    background-color:white;
+}
