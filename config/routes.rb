@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/profile'
+  get 'users/configuration'
   devise_for :users
   resources :reviews
   resources :services
