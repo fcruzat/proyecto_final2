@@ -1,2 +1,22 @@
 <h1>Users#profile</h1>
 <p>Find me in app/views/users/profile.html.erb</p>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="field">
+    <%= f.label :Foto_de_perfil %><br />
+    <%= f.password_field :photo, autocomplete: "foto de perfil" %>
+</div>
+
+<div class="field">
+    <%= f.label :País_de_residencia %><br />
+    <%= f.text_field :country, autocomplete: "país de residencia" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Ciudad_de_residencia %><br />
+    <%= f.text_field :city, autocomplete: "ciudad de residencia" %>
+  </div>
+
+  <% end %>

@@ -5,8 +5,23 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :Nombres %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Apellido_paterno %><br />
+    <%= f.text_field :lastname, autocomplete: "apellido paterno" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Apellido_materno %><br />
+    <%= f.text_field :lastname2, autocomplete: "apellido materno" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -20,6 +35,41 @@
   <div class="field">
     <%= f.label :Confirmación_de_contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Soy_de_género_femenino %><br />
+    <%= f.check_box :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Rut %><br />
+    <%= f.number_field :rut, autocomplete: "rut" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Para_poder_confirmar_tu_identidad_necesitamos_una_foto_de_tu_carnet %><br />
+    <%= f.text_field :rut_photo, autocomplete: "foto de carnet" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :País_de_residencia %><br />
+    <%= f.text_field :country, autocomplete: "país de residencia" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Ciudad_de_residencia %><br />
+    <%= f.text_field :city, autocomplete: "ciudad de residencia" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Fecha_de_nacimiento %><br />
+    <%= f.date_field :born, autocomplete: "fecha de nacimiento" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Añade_una_foto_de_perfil %><br />
+    <%= f.text_field :photo, autocomplete: "foto de perfil" %>
   </div>
 
   <div class="actions">
