@@ -6,19 +6,6 @@ ActiveAdmin.register User do
 #
 # or
 #
-# form do |f|
-#     f.inputs 'country' do
-#       f.input :country, as: :string
-#     end
-#     f.actions
-#   end
-
-# ????????
-
-
-
-
-
 # permit_params do
 #   permitted = [:permitted, :attributes]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
