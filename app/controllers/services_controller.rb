@@ -10,6 +10,7 @@ class ServicesController < ApplicationController
   # GET /services/1
   # GET /services/1.json
   def show
+    @users = User.all
   end
 
   # GET /services/new

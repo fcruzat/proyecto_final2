@@ -13,7 +13,13 @@
         
         <div class="card-body">
           <h5 class="card-title"><%= service.name %></h5>
-          <p class="card-text">Servicio a domicilio: <%= service.home %></p>
+          <p class="card-text">Servicio a domicilio: 
+            <% if service.home == true %>
+            <%= "Si" %>
+            <% else %>
+            <%= "No" %>
+            <% end %>
+          </p>
           <%= service.category %>
           <br>
           <%= service.description %>

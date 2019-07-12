@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nombre::</strong>
+  <strong>Nombre:</strong>
   <%= @service.name %>
 </p>
 
@@ -22,8 +22,12 @@
 
 <p>
   <strong>Fotos:</strong>
-  <%= @service.photos %>
+  <%= image_tag @service.photos, class: 'card-img-top', style: 'height:200px, weight:200px'%>
 </p>
 
+<p>
+  <strong>Usuaria:</strong>
+  <%= link_to @users_profile_path, current_user.name%>
+</p>
 <%= link_to 'Editar', edit_service_path(@service) %> |
 <%= link_to 'Atrás', services_path %>

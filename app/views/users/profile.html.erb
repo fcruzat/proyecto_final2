@@ -1,0 +1,16 @@
+<h1><%= @user.name + ' ' + @user.lastname + ' ' + @user.lastname2 %></h1>
+
+<h2>Foto de perfil</h2>
+<div class="text-center">
+    
+        <img src="<%= @user.photo%>" class="rounded" alt="...">
+      </div>
+
+<h2>Descripción</h2>
+<%= @user.description %>
+<h4>País de residencia</h4>
+<%= @user.country %>
+<h4>Ciudad de residencia</h4>
+<%=@user.city %>
+<h4>Servicios que ofrece</h4>
+<%=@user.services.name %>
