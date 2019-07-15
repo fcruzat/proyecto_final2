@@ -17,8 +17,13 @@
 
 <p>
   <strong>Va a domicilio:</strong>
-  <%= @service.home %>
+  <% if @service.home == true %>
+  <%= "Si" %>
+  <% else %>
+  <%= "No" %>
+  <% end %>
 </p>
+
 
 <p>
   <strong>Fotos:</strong>
@@ -27,7 +32,14 @@
 
 <p>
   <strong>Usuaria:</strong>
-  <%= link_to @users_profile_path, current_user.name%>
+  <%= link_to @service.user.name, users_profile_path%>
 </p>
+
+
+
+<%= link_to  "Quiero contratar este servicio", services_path, class:'btn btn-warning' %>
+<br>
+
+
 <%= link_to 'Editar', edit_service_path(@service) %> |
 <%= link_to 'Atrás', services_path %>

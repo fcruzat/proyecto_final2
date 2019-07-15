@@ -24,12 +24,16 @@
           <br>
           <%= service.description %>
           <br>
-          <%= link_to 'Ver |', service %>
-          <%= link_to 'Editar |', edit_service_path(service) %>
+          <%= link_to 'Ver', service %>
+          <% if can?(:edit, service) %>
+          <%= link_to '| Editar |', edit_service_path(service) %>
+          <% end %>
+          <% if can?(:destroy, service) %>
           <%= link_to 'Eliminar', service, method: :delete, data: { confirm: 'Estás segura?' } %>
+          <% end %> 
         </div>
         <div class="card-footer">
-          <small class="text-muted">USER NAME</small>
+          <small class="text-muted"><%=service.user.name%></small>
         </div>
         
       </div>
