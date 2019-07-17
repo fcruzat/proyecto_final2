@@ -1,0 +1,37 @@
+<div class='col-md-3 px-3 my-3'>
+        <div class="card">
+          <!-- <#%= image_tag service.photos, class: 'card-img-top', style: 'height:200px'%> -->
+          
+          <% if service.photos.attached? %>
+          <% service.photos.each do |photo| %>
+          <%= image_tag photo.variant(resize: "200x200") %>
+          <% end %>
+        </p>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= service.name %></h5>
+          <p class="card-text">Servicio a domicilio: 
+            <% if service.home == true %>
+            <%= "Si" %>
+            <% else %>
+            <%= "No" %>
+            <% end %>
+          </p>
+          <%= service.category %>
+          <br>
+          <%= service.description %>
+          <br>
+          <%= link_to 'Ver', service %>
+          <% if can?(:edit, service) %>
+          <%= link_to '| Editar |', edit_service_path(service) %>
+          <% end %>
+          <% if can?(:destroy, service) %>
+          <%= link_to 'Eliminar', service, method: :delete, data: { confirm: 'Estás segura?' } %>
+          <% end %> 
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><%=service.user.name%></small>
+        </div>
+        
+      </div>
+    </div>

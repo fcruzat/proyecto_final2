@@ -1,8 +1,7 @@
 class SearchesController < ApplicationController
     def new
-        
         if params[:q].present?
-        @services = Service.where('description like?', "%#{params[:q]}%" ) || Service.where('name like?', "%#{params[:q]}%" ) || Service.where('category like?', "%#{params[:q]}%" )
+        @services = Service.where('description like ? or name like ?', "%#{params[:q]}%", "%#{params[:q]}%" )
         else
         @services = Service.all
         end
