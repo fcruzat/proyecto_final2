@@ -17,6 +17,7 @@ class Ability
       can :create, Service 
       can :destroy, Service, user_id: user.id 
       can :edit, Service, user_id: user.id
+      can :update, Service, user_id: user.id
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
