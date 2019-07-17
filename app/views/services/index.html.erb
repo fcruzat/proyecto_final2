@@ -3,8 +3,14 @@
     <h1>Servicios por categoría</h1>
   </div>
   
+
   <div class="container">
-      
+    <form action="<%=new_search_path%>">
+      <p><strong>Buscar</strong></p>
+      <input name="q">
+    </form>
+     
+
     <div class="card-deck">
       <% @services.each do |service| %>
       <div class='col-md-3 px-3 my-3'>

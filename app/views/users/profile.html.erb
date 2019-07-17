@@ -19,5 +19,6 @@
 <%=@user.city %>
 <h4>Servicios que ofrece</h4>
 <%@services.each do |service|%>
-<%=service.name%>
+<%=link_to service.name%>
+<br>
 <% end %>

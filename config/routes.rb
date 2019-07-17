@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'users/profile'
   get 'users/configuration'
   resources :reviews
+  resources :searches
   resources :services do
     # delete 'delete_image/:photos_id', on: :member, to: 'services#delete_image', as: 'delete_image'
     delete 'delete_image/:photo_id', to:'services#delete_image', as:'delete_image'

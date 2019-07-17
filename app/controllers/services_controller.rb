@@ -71,14 +71,18 @@ class ServicesController < ApplicationController
   #   redirect_to service_path(@service)
   #   end
     def delete_image
+      @service = Service.find(params[:service_id])
+      if @service.user == current_user
       begin
-        @service = Service.find(params[:service_id])
         @photo = ActiveStorage::Attachment.find(params[:photo_id])
         @photo.purge
         redirect_to service_path(@service), notice: 'Imagen eliminada con éxito'
       rescue ActiveRecord::RecordNotFound
         redirect_to service_path(@service), alert: 'Error al eliminar la imagen'
       end
+    else
+      redirect_to service_path(@service), alert: 'Error al eliminar la imagen'
+    end
     end
   private
     # Use callbacks to share common setup or constraints between actions.
