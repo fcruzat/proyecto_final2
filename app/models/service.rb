@@ -3,4 +3,5 @@ class Service < ApplicationRecord
     has_many :reviews
     has_many :usertags
     has_many :tags, through: :usertags
+    has_many_attached :photos
 end

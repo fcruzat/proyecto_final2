@@ -27,7 +27,14 @@
 
 <p>
   <strong>Fotos:</strong>
-  <%= image_tag @service.photos, class: 'card-img-top', style: 'height:200px, weight:200px'%>
+  <% if @service.photos.attached? %>
+ <br>
+ <% @service.photos.each do |photo| %>
+ <%= image_tag photo.variant(resize: "200x200") %>
+ <% end %>
+</p>
+<% end %>
+  <!-- <#%= image_tag @service.photos, class: 'card-img-top', style: 'height:200px, weight:200px'%> -->
 </p>
 
 <p>

@@ -10,7 +10,13 @@
       <div class='col-md-3 px-3 my-3'>
       <div class="card">
         <!-- <#%= image_tag service.photos, class: 'card-img-top', style: 'height:200px'%> -->
-        
+       
+        <% if service.photos.attached? %>
+        <% service.photos.each do |photo| %>
+        <%= image_tag photo.variant(resize: "200x200") %>
+       <% end %>
+      </p>
+      <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= service.name %></h5>
           <p class="card-text">Servicio a domicilio: 
