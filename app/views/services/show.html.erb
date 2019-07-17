@@ -31,8 +31,10 @@
  <br>
  <% @service.photos.each do |photo| %>
  <%= image_tag photo.variant(resize: "200x200") %>
+ <br>
+ <%= link_to 'Remove', delete_image_service_path(@service, photo), method: :delete, data: { confirm: 'Are you sure?' } %>
+ <br>
  <% end %>
-</p>
 <% end %>
   <!-- <#%= image_tag @service.photos, class: 'card-img-top', style: 'height:200px, weight:200px'%> -->
 </p>

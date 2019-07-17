@@ -1,7 +1,9 @@
 class ServicesController < ApplicationController
-  # before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_service, only: [:show, :edit, :update, :destroy, :delete_image]
   before_action :authenticate_user!
-  load_and_authorize_resource
+  authorize_resource
+  # load_and_authorize_resource
+
   # GET /services
   # GET /services.json
   def index
@@ -63,6 +65,20 @@ class ServicesController < ApplicationController
     end
   end
 
+  # def delete_image
+  #   @photo = ActiveStorage::Attachment.find(params[:id])
+  #   @photo.purge
+  #   redirect_to service_path(@service)
+  #   end
+    def delete_image
+      begin
+      @photo = ActiveStorage::Attachment.find(params[:id])
+      @photo.purge
+      redirect_to service_path(@service), notice: 'Imagen eliminada con éxito'
+      rescue ActiveRecord::RecordNotFound
+      redirect_to service_path(@service), alert: 'Error al eliminar la imagen'
+      end
+    end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service
