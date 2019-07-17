@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :Descripción %><br />
-    <%= f.text_field :description, autocomplete: "Descripción" %>
+    <%= f.text_area :description, autocomplete: "Descripción" %>
   </div>
 
   <div class="field">
     <%= f.label :Foto_de_perfil %><br />
-    <%= f.text_field :photo, autocomplete: "Foto de perfil" %>
+    <%= f.file_field :photo, autocomplete: "Foto de perfil" %>
 </div>
 
 
