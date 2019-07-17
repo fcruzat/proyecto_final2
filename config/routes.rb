@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'users/configuration'
   resources :reviews
   resources :services do
-    delete 'delete_image/:photo_id', on: :member, to: 'services#delete_image', as: 'delete_image'
+    # delete 'delete_image/:photos_id', on: :member, to: 'services#delete_image', as: 'delete_image'
+    delete 'delete_image/:photo_id', to:'services#delete_image', as:'delete_image'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "pages#index"
