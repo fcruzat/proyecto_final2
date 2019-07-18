@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'users/profile'
   get 'users/configuration'
-  resources :reviews
   resources :searches
   resources :services do
+    resources :reviews, only: [:create, :destory]
     # delete 'delete_image/:photos_id', on: :member, to: 'services#delete_image', as: 'delete_image'
     delete 'delete_image/:photo_id', to:'services#delete_image', as:'delete_image'
   end

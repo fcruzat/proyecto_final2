@@ -1,0 +1,6 @@
+<p>COMENTARIOS</p>
+<% form_with(model: [@service, Review.new]) do |f| %>
+<% f.label :comment %>
+<% f.text_area :comment %>
+<% f.submit :enviar %>
+<% end %>

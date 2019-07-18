@@ -44,7 +44,22 @@
   <%= link_to @service.user.name, users_profile_path%>
 </p>
 
+<!-- <div id= "reviews">
+<p>COMENTARIOS</p>
+<#% form_with(model: [@service, Review.new], local: true) do |f| %>
+<#% f.label :comment %>
+<#% f.text_area :comment %>
+<#% f.submit :enviar %>
+<#% end %>
+</div>
 
+<div id="reviews">
+  <h2><#%= @service.reviews.count %> Comments</h2>
+  <#%= render @service.reviews %>
+
+  <h3>Add a comment:</h3>
+  <#%= render "reviews/form" %>
+</div> -->
 
 <%= link_to  "Quiero contratar este servicio", services_path, class:'btn btn-warning' %>
 <br>

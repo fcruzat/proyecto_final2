@@ -24,7 +24,13 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
+    @service = Service.find(params[:service_id])
+    # @review = Review.new(content:params[:review][:comment], user: current_user)
+    @review = @service.reviews.create(params[:review].permit(:comment))
+		# @service.reviews << @review
+		@review.save
+		# redirect_to @post
+    # @review = Review.new(review_params)
 
     respond_to do |format|
       if @review.save
@@ -54,6 +60,8 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
+    @service = Service.find(params[:service_id])
+		@review = @service.reviews.find(params[:id])
     @review.destroy
     respond_to do |format|
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
