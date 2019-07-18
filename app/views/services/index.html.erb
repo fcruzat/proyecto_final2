@@ -1,8 +1,11 @@
 <div>
-  <div class="jumbotron">
-    <h1>Servicios por categoría</h1>
+  <div class="caja2">
+    <div class="image1">
+      <h2>Servicios por categoría</h2>
+    </div>
   </div>
-  
+</div>
+<div class="jumbotron">
   
   <div class="container">
     <form action="<%=new_search_path%>">
@@ -14,24 +17,24 @@
     <div class="card-deck" id="services">
       
       <%= render @services%>
-    
-    
-  </div>
-  <br>
-  <script>
-    $("[name=q]").keyup(function(event){
-      $.ajax({
-        url:'<%=new_search_path%>',
-        type: 'GET',
-        dataType:'script',
-        data: {q: $(this).val()}
-      })
-    });
-    
-  </script>
-  <%= link_to 'Quiero ofrecer un servicio', new_service_path %>
-</div>      
-
+      
+      
+    </div>
+    <br>
+    <script>
+      $("[name=q]").keyup(function(event){
+        $.ajax({
+          url:'<%=new_search_path%>',
+          type: 'GET',
+          dataType:'script',
+          data: {q: $(this).val()}
+        })
+      });
+      
+    </script>
+    <%= link_to 'Quiero ofrecer un servicio', new_service_path %>
+  </div>      
+  
 </div>
 
 

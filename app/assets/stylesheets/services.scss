@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-    // background: linear-gradient(to right, #7b4397, #dc2430); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    // background-image: url("fondo1.jpg");
     font-family: 'Fjalla One', sans-serif;
 }
 
@@ -11,14 +9,49 @@ body{
     background-color: beige;
     
 }
+.image1{
+    background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background: linear-gradient(to right, #fc00ff, #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    height: 500px;
+}
+.caja2{
+    background-image: url("mujeres_trabajando2.jpeg");
+    // background-image: url("fondo1.jpg");
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+    font-weight: bold;
+    height: 500px;
+}
 
-h1{
+.image_index{
+    background: linear-gradient(to right, #7b4397, #dc2430); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+    height: 500px;
+}
+.caja_index{
+    background-image: url("mujeres_trabajando3.jpeg");
+    // background-image: url("fondo1.jpg");
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+    font-weight: bold;
+    height: 500px;
+}
+.titulo{
     text-align: center;
     font-weight: bold;
     color: #fb8498;
     font-family: 'Satisfy', cursive;
 }
 
+.caja_profile{
+    //background-color: #fc00ff;
+    background-color: #fb8498;
+}
+
+// .user.photo{
+//     border-radius: 50%;
+// }
 .jumbotron{
     background-color:white;
 }
