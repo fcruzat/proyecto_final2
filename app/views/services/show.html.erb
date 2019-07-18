@@ -1,90 +1,92 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @service.name %>
-</p>
-
-<p>
-  <strong>Categoría:</strong>
-  <%= @service.category %>
-</p>
-
-<p>
-  <strong>Descripción del servicio:</strong>
-  <%= @service.description %>
-</p>
-
-<p>
-  <strong>Va a domicilio:</strong>
-  <% if @service.home == true %>
-  <%= "Si" %>
-  <% else %>
-  <%= "No" %>
-  <% end %>
-</p>
-
-
-<p>
-  <strong>Fotos:</strong>
-  <% if @service.photos.attached? %>
- <br>
- <% @service.photos.each do |photo| %>
- <%= image_tag photo.variant(resize: "200x200") %>
- <br>
- <%= link_to 'Remove', service_delete_image_path(@service, photo), method: :delete, data: { confirm: 'Are you sure?' } %>
- <br>
- <% end %>
-<% end %>
-  <!-- <#%= image_tag @service.photos, class: 'card-img-top', style: 'height:200px, weight:200px'%> -->
-</p>
-
-<p>
-  <strong>Usuaria:</strong>
-  <%= link_to @service.user.name, users_profile_path%>
-</p>
-
-<%= form_with(model: [@service, Review.new]) do |form| %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>Nombre:</strong>
+    <%= @service.name %>
+  </p>
+  
+  <p>
+    <strong>Categoría:</strong>
+    <%= @service.category %>
+  </p>
+  
+  <p>
+    <strong>Descripción del servicio:</strong>
+    <%= @service.description %>
+  </p>
+  
+  <p>
+    <strong>Va a domicilio:</strong>
+    <% if @service.home == true %>
+    <%= "Si" %>
+    <% else %>
+    <%= "No" %>
+    <% end %>
+  </p>
+  
+  
+  <p>
+    <strong>Fotos:</strong>
+    <% if @service.photos.attached? %>
+    <br>
+    <% @service.photos.each do |photo| %>
+    <%= image_tag photo.variant(resize: "200x200") %>
+    <br>
+    <%= link_to 'Remove', service_delete_image_path(@service, photo), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <% end %>
+    <% end %>
+    <!-- <#%= image_tag @service.photos, class: 'card-img-top', style: 'height:200px, weight:200px'%> -->
+  </p>
+  
+  <p>
+    <strong>Usuaria:</strong>
+    <%= link_to @service.user.name, users_profile_path%>
+  </p>
+  <div class="py-5 ml-auto">
+    <%= link_to  "Quiero contratar este servicio", services_path, class:'btn btn-warning' %>
+  </div>
+  <%= form_with(model: [@service, Review.new]) do |form| %>
   <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-      <ul>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+    
+    <ul>
       <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+  
+  
+  <div class="caja_profile">
+    <div class="field">
+      <%= form.label :Escribe_tu_comentario%>
+      <%= form.text_area :comment %>
+    </div>
+    
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <br>
+  <%@service.reviews.each do |review| %>
+  <div id="reviews1">
+    <br>
+    <div class="caja1">
+      <div class="caja_profile">
+        <p>Usuario: <%=review.user.name%>, Creado el <%=review.created_at%></p>
+      </div>
+      <p>Comentario: <%=review.comment %></p>
+    </div>
+    <%end%>
   </div>
-<% end %>
-
-<table>
-    <thead>
-        <th>Comentarios</th>
-    </thead>
-    <tbody>
-        <%@service.reviews.each do |review| %>
-        <tr id="reviews1">
-            <td><%=review.comment %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
-
-
-
-<%= link_to  "Quiero contratar este servicio", services_path, class:'btn btn-warning' %>
-<br>
-
-
-<%= link_to 'Editar', edit_service_path(@service) %> |
-<%= link_to 'Atrás', services_path %>
+  
+  <br>
+  
+  <%= link_to 'Editar', edit_service_path(@service) %> |
+  <%= link_to 'Atrás', services_path %>
+</div>
