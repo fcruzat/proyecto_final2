@@ -1,6 +1,6 @@
 <div>
-  <div class="caja2">
-    <div class="image1">
+  <div class="caja2 text-white">
+    <div class="image1 display-1">
       <h2>Servicios por categoría</h2>
     </div>
   </div>
@@ -15,12 +15,10 @@
     
     
     <div class="card-deck" id="services">
-      
       <%= render @services%>
-      
-      
     </div>
     <br>
+
     <script>
       $("[name=q]").keyup(function(event){
         $.ajax({
