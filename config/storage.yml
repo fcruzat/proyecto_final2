@@ -15,10 +15,10 @@ local:
 #   bucket: your_own_bucket
 amazon:
   service: S3
-  access_key_id: <%= ENV['AWS_KEY_SORORISERVICE'] %>
-  secret_access_key: <%= ENV['AWS_SECRET_SORORISERVICE'] %>
+  access_key_id: <%=ENV['AWS_KEY_SORORISERVICE']%>
+  secret_access_key: <%=ENV['AWS_SECRET_SORORISERVICE']%>
   region: sa-east-1
-  bucket: <%= ENV['AWS_BUCKET_SORO'] %>}
+  bucket: <%=ENV['AWS_BUCKET_SORO']%>
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
