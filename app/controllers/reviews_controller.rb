@@ -25,10 +25,11 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @service = Service.find(params[:service_id])
-    # @review = Review.new(content:params[:review][:comment], user: current_user)
-    @review = @service.reviews.create(params[:review].permit(:comment))
-		# @service.reviews << @review
-		@review.save
+    @review = Review.new(comment:params[:review][:comment], user: current_user)
+    # @review = @service.reviews.create(params[:review].permit(:comment))
+    # @service.reviews << @review
+    @review.service = @service
+		#@review.save
 		# redirect_to @post
     # @review = Review.new(review_params)
 
@@ -36,9 +37,11 @@ class ReviewsController < ApplicationController
       if @review.save
         format.html { redirect_to @review, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @review.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
