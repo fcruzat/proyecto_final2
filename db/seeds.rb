@@ -34,7 +34,32 @@ User.create(
     password_confirmation: "123456",
     id: 2
 )
-
+User.create(
+    name: "Persona3",
+    lastname: "Primerapellido",
+    lastname2: "Segundoapellido",
+    gender: true,
+    country: "CL",
+    city: "Santiago",
+    approbated:true,
+    email: "persona3@mail.com",
+    password: "123456",
+    password_confirmation: "123456",
+    id: 3
+)
+User.create(
+    name: "Persona4",
+    lastname: "Primerapellido",
+    lastname2: "Segundoapellido",
+    gender: true,
+    country: "CL",
+    city: "Santiago",
+    approbated:true,
+    email: "persona4@mail.com",
+    password: "123456",
+    password_confirmation: "123456",
+    id: 4
+)
 
 
 Service.create(
@@ -52,17 +77,17 @@ Service.create(
     user_id: 2
 )
 Service.create(
-    name: 'Peluquería a domicilio', 
-    category: 'Belleza',
-    description: 'Voy a tu casa a cortarte el pelo',
+    name: 'Cocina a domicilio', 
+    category: 'Alimentos',
+    description: 'Preparo ricos platos en la comodidad de tu hogar!!',
     home: true,
-    user_id: 2
+    user_id: 3
 )
 Service.create(
     name: 'Cuido a tu gato', 
     category: 'Mascotas',
     description: 'Aunque los gatos se cuidan solos, puedo ir a cuidarlo mientras no estés',
     home: true,
-    user_id: 1
+    user_id: 4
 )
-#AdminUser.create!(email: 'admin_prueba@mail.com', password: 'contraseña.admin', password_confirmation: 'contraseña.admin')
+AdminUser.create!(email: 'admin_prueba@mail.com', password: 'contraseña.admin', password_confirmation: 'contraseña.admin')
