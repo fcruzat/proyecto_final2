@@ -1,24 +1,25 @@
 <div>
   <div class="caja2 text-white">
     <div class="image1 display-1">
-      <h2>Servicios por categoría</h2>
+      <h2 class="display-4">Servicios por categoría</h2>
     </div>
   </div>
 </div>
 <div class="jumbotron">
   
-  <div class="container">
+  <div class="caja1">
     <form action="<%=new_search_path%>">
       <p><strong>Buscar</strong></p>
       <input name="q">
     </form>
-    
-    
+  </div>
+  
+  <div class="container">
     <div class="card-deck" id="services">
       <%= render @services%>
     </div>
     <br>
-
+    
     <script>
       $("[name=q]").keyup(function(event){
         $.ajax({
@@ -29,7 +30,9 @@
         })
       });
     </script>
-    <%= link_to 'Quiero ofrecer un servicio', new_service_path %>
+    <div class="caja_profile">
+      <%= link_to 'Quiero ofrecer un servicio', new_service_path %>
+    </div>
   </div>      
   
 </div>

@@ -1,24 +1,20 @@
 
 <div class="container text-center">
-    <h1><%= @user.name + ' ' + @user.lastname + ' ' + @user.lastname2 %></h1>
-<!-- <h2>Foto de perfil</h2> -->
-<% if @user.photo.attached? %>
-        <%= image_tag @user.photo.variant(resize: "200x200") %>
-      <% else %>
-      <%= image_tag("no_image.png")%>
-      <% end %>
+  <h1><%= @user.name + ' ' + @user.lastname + ' ' + @user.lastname2 %></h1>
+  <% if @user.photo.attached? %>
+    <%= image_tag @user.photo.variant(resize: "200x200") %>
+  <% else %>
+    <%= image_tag("no_image.png")%>
+  <% end %>
 </div>
 <div class="text-center py-4">
-    
-        <!-- <img src="<#%= @user.photo%>" class="rounded" alt="...">
-      </div> -->
-<h2 class="caja_profile py-4">Descripción:</h2>
-<%= @user.description %>
-<h4>País de residencia: <%= @user.country %></h4>
-<h4>Ciudad de residencia: <%=@user.city %></h4>
-<h4>Servicios que ofrece:</h4>
-<%@services.each do |service|%>
-<%=link_to service.name%>
-<br>
-<% end %>
+  <h2 class="caja_profile py-4">Descripción:</h2>
+  <%= @user.description %>
+  <h4>País de residencia: <%= @user.country %></h4>
+  <h4>Ciudad de residencia: <%=@user.city %></h4>
+  <h4>Servicios que ofrece:</h4>
+  <%@services.each do |service|%>
+    <%=link_to service.name%>
+    <br>
+  <% end %>
 </div>
