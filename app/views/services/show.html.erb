@@ -45,7 +45,7 @@
     <%= link_to @service.user.name, users_profile_path%>
   </p>
   <div class="py-5 ml-auto">
-    <%= link_to  "Quiero contratar este servicio", services_path, class:'btn btn-warning' %>
+    <%= link_to  "Quiero contratar este servicio", services_path, class:'btn btn-dark' %>
   </div>
   <%= form_with(model: [@service, Review.new]) do |form| %>
   <% if @review.errors.any? %>
